@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "111ff1df-1c59-41aa-8b56-247d63eb2f7c",
+		"name": "员工管理登录",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "登录成功",
+			"item": [
+				{
+					"name": "POST请求——登录成功",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b016bcd4-2f13-4516-9e24-21463ca1f40b",
+								"exec": [
+									"var token = pm.response.json().data;\r",
+									"pm.globals.set(\"login\", \"Bearer \" + token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"13800000002\", \r\n\"password\":\"123456\"}"
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
